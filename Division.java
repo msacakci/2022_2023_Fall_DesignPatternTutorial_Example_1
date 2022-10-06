@@ -1,4 +1,4 @@
-public class Division {
+public class Division extends CalculationComponent{
     private int x;
     private int y;
 

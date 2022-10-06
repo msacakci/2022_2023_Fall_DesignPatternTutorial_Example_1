@@ -1,32 +1,21 @@
 import java.util.ArrayList;
 
-public class CalculationGroup {
-    private ArrayList list;
+public class CalculationGroup extends CalculationComponent{
+    private ArrayList<CalculationComponent> list;
 
     CalculationGroup() {
         list = new ArrayList();
     }
 
-    public void addComponent(Object object) {
-        list.add(object);
+    public void addComponent(CalculationComponent calculationComponent) {
+        list.add(calculationComponent);
     }
 
     public int compute() {
         int result = 0;
 
         for(int index = 0; index < list.size(); index++) {
-            if(list.get(index).getClass() == Summation.class) {
-                result = result + ((Summation) list.get(index)).compute();
-            }
-            else if(list.get(index).getClass() == Subtraction.class) {
-                result = result + ((Subtraction) list.get(index)).compute();
-            }
-            else if(list.get(index).getClass() == Multiplication.class) {
-                result = result + ((Multiplication) list.get(index)).compute();
-            }
-            else if(list.get(index).getClass() == Division.class) {
-                result = result + ((Division) list.get(index)).compute();
-            }
+            result = result + list.get(index).compute();
         }
 
         return result;

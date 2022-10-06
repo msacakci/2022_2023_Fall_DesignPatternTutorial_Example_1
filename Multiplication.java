@@ -1,4 +1,4 @@
-public class Multiplication {
+public class Multiplication extends CalculationComponent{
     private int x;
     private int y;
 

@@ -1,4 +1,4 @@
-public class Summation {
+public class Summation extends CalculationComponent{
     private int x;
     private int y;
 

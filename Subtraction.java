@@ -1,4 +1,4 @@
-public class Subtraction {
+public class Subtraction extends CalculationComponent{
 
     private int x;
 
