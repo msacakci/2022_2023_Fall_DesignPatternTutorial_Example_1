@@ -21,6 +21,12 @@ public class CalculationGroup {
             else if(list.get(index).getClass() == Subtraction.class) {
                 result = result + ((Subtraction) list.get(index)).compute();
             }
+            else if(list.get(index).getClass() == Multiplication.class) {
+                result = result + ((Multiplication) list.get(index)).compute();
+            }
+            else if(list.get(index).getClass() == Division.class) {
+                result = result + ((Division) list.get(index)).compute();
+            }
         }
 
         return result;
