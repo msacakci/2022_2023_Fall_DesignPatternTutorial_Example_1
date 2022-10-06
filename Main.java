@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        Summation sum = new Summation(5, 9);
-        System.out.println(sum.compute()); // Prints: 14
+        CalculationGroup calculationGroup = new CalculationGroup();
+        calculationGroup.addComponent(new Summation(5, 9));
+        calculationGroup.addComponent(new Subtraction(7, 3));
 
-        Subtraction sub = new Subtraction(7, 3);
-        System.out.println(sub.compute()); // Prints: 4
+        System.out.println(calculationGroup.compute()); // Prints (5 + 9) + (7 - 3) = 18
     }
 }
