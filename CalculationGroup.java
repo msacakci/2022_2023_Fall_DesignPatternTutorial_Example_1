@@ -15,7 +15,12 @@ public class CalculationGroup {
         int result = 0;
 
         for(int index = 0; index < list.size(); index++) {
-            result = result + list.compute(); // Compiler will not except this line!
+            if(list.get(index).getClass() == Summation.class) {
+                result = result + ((Summation) list.get(index)).compute();
+            }
+            else if(list.get(index).getClass() == Subtraction.class) {
+                result = result + ((Subtraction) list.get(index)).compute();
+            }
         }
 
         return result;
